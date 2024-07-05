@@ -43,13 +43,22 @@ public class Test {
 //			Customer c2 = new Customer("002", "Le Nhat 2", "tung2@gmail.com");
 //			session.saveOrUpdate(c2);
 
-			String hql = "FROM Customer c WHERE size(c.orders) > 0";
-			List<Customer> results = session.createQuery(hql).list();
-
-			for (Customer rs : results) {
-				System.out.println(rs);
-			}
-
+//			String hql = "FROM Customer c WHERE size(c.orders) > 0";
+//			List<Customer> results = session.createQuery(hql).list();
+//
+//			for (Customer rs : results) {
+//				System.out.println(rs);
+//			}
+			
+			Customer c2 = session.find(Customer.class, "002");
+			My_Order o1 = new My_Order("5", "Tp HCM", c2);
+			My_Order o2 = new My_Order("6", "Tp HCM", c2);
+			
+			//Customer ko can setOrders
+			session.saveOrUpdate(c2);
+			session.saveOrUpdate(o1);
+			session.saveOrUpdate(o2);
+			
 			tr.commit();
 			session.close();
 		}
