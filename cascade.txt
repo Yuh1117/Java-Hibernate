@@ -1,0 +1,5 @@
+CascadeType.ALL
+CascadeType.PERSIST
+CascadeType.REMOVE
+CascadeType.MERGE
+...

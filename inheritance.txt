@@ -1,0 +1,3 @@
+InheritanceType.SINGLE_TABLE
+InheritanceType.TABLE_PER_CLASS
+InheritanceType.JOINED
